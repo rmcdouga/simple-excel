@@ -12,15 +12,13 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- Project Dependencies -->
-		<apache-poi.version>5.2.5</apache-poi.version> <!-- reminder - remove the explicit commons-compress dependency when this gets updated. -->
-		<commons-collections4.version>4.4</commons-collections4.version>
-		<commons-compress.version>1.26.0</commons-compress.version>	<!-- Included to address CVE-2024-25710 and CVE-2024-26308 -->
+		<apache-poi.version>5.5.1</apache-poi.version>
+		<commons-collections4.version>4.5.0</commons-collections4.version>
 
 		<!-- Testing Dependencies -->
-		<junit.version>5.10.2</junit.version>
-		<mockito.version>5.10.0</mockito.version>
-		<hamcrest.version>2.2</hamcrest.version>
-		<junit-addons.version>1.4</junit-addons.version>
+		<junit.version>5.14.1</junit.version>
+		<mockito.version>5.21.0</mockito.version>
+		<hamcrest.version>3.0</hamcrest.version>
 		<jimfs.version>1.3.0</jimfs.version>
 	</properties>
 
@@ -46,12 +44,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-compress</artifactId>
-			<version>1.26.0</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-collections4</artifactId>
 			<version>${commons-collections4.version}</version>
 		</dependency>
@@ -74,29 +66,6 @@
 			<artifactId>mockito-junit-jupiter</artifactId>
 			<version>${mockito.version}</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>junit-addons</groupId>
-			<artifactId>junit-addons</artifactId>
-			<version>${junit-addons.version}</version>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<!-- Exclude this really old version of junit that junit-addons depends on -->
-					<groupId>junit</groupId>
-					<artifactId>junit</artifactId>
-				</exclusion>
-				<exclusion>
-					<!-- Exclude this really old version of xerces that junit-addons depends on -->
-					<groupId>xerces</groupId>
-					<artifactId>xercesImpl</artifactId>
-				</exclusion>
-				<exclusion>
-					<!-- Exclude this really old version of xerces that junit-addons depends on -->
-					<groupId>xerces</groupId>
-					<artifactId>xmlParserAPIs</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.hamcrest</groupId>
